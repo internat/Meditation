@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindfulSpace - Meditation & Mindfulness</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-lotus"></i>
+                <span>MindfulSpace</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#meditation" class="nav-link">Meditation</a></li>
+                <li><a href="#breathing" class="nav-link">Breathing</a></li>
+                <li><a href="#sounds" class="nav-link">Sounds</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Find Your Inner Peace</h1>
+            <p class="hero-subtitle">Discover tranquility through guided meditation, breathing exercises, and mindful moments</p>
+            <button class="cta-button" onclick="scrollToSection('meditation')">Start Meditating</button>
+        </div>
+        <div class="hero-animation">
+            <div class="floating-circle circle-1"></div>
+            <div class="floating-circle circle-2"></div>
+            <div class="floating-circle circle-3"></div>
+        </div>
+    </section>
+
+    <!-- Meditation Timer Section -->
+    <section id="meditation" class="meditation-section">
+        <div class="container">
+            <h2 class="section-title">Meditation Timer</h2>
+            <p class="section-subtitle">Choose your meditation duration and begin your journey to mindfulness</p>
+            
+            <div class="timer-container">
+                <div class="timer-display">
+                    <div class="timer-circle">
+                        <svg class="progress-ring" width="200" height="200">
+                            <circle class="progress-ring-circle" cx="100" cy="100" r="90"></circle>
+                        </svg>
+                        <div class="timer-text">
+                            <span id="timer-minutes">05</span>:<span id="timer-seconds">00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timer-controls">
+                    <div class="duration-buttons">
+                        <button class="duration-btn active" data-duration="300">5 min</button>
+                        <button class="duration-btn" data-duration="600">10 min</button>
+                        <button class="duration-btn" data-duration="900">15 min</button>
+                        <button class="duration-btn" data-duration="1200">20 min</button>
+                        <button class="duration-btn" data-duration="1800">30 min</button>
+                    </div>
+                    
+                    <div class="control-buttons">
+                        <button id="start-btn" class="control-btn primary">
+                            <i class="fas fa-play"></i> Start
+                        </button>
+                        <button id="pause-btn" class="control-btn" disabled>
+                            <i class="fas fa-pause"></i> Pause
+                        </button>
+                        <button id="reset-btn" class="control-btn">
+                            <i class="fas fa-stop"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breathing Exercise Section -->
+    <section id="breathing" class="breathing-section">
+        <div class="container">
+            <h2 class="section-title">Breathing Exercise</h2>
+            <p class="section-subtitle">Follow the visual guide for mindful breathing</p>
+            
+            <div class="breathing-container">
+                <div class="breathing-circle">
+                    <div class="breathing-guide">
+                        <div class="breath-text">Breathe</div>
+                    </div>
+                </div>
+                
+                <div class="breathing-controls">
+                    <div class="breathing-patterns">
+                        <button class="pattern-btn active" data-pattern="4-7-8">4-7-8 Technique</button>
+                        <button class="pattern-btn" data-pattern="4-4-4">Box Breathing</button>
+                        <button class="pattern-btn" data-pattern="simple">Simple Breathing</button>
+                    </div>
+                    
+                    <button id="breathing-toggle" class="control-btn primary">
+                        <i class="fas fa-play"></i> Start Breathing
+                    </button>
+                </div>
+                
+                <div class="breathing-instructions">
+                    <p id="breathing-instruction">Click "Start Breathing" to begin your practice</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambient Sounds Section -->
+    <section id="sounds" class="sounds-section">
+        <div class="container">
+            <h2 class="section-title">Ambient Sounds</h2>
+            <p class="section-subtitle">Create your perfect meditation atmosphere</p>
+            
+            <div class="sounds-grid">
+                <div class="sound-card" data-sound="rain">
+                    <div class="sound-icon">
+                        <i class="fas fa-cloud-rain"></i>
+                    </div>
+                    <h3>Rain</h3>
+                    <div class="sound-controls">
+                        <button class="sound-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="volume-slider" min="0" max="100" value="50">
+                    </div>
+                </div>
+                
+                <div class="sound-card" data-sound="forest">
+                    <div class="sound-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Forest</h3>
+                    <div class="sound-controls">
+                        <button class="sound-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="volume-slider" min="0" max="100" value="50">
+                    </div>
+                </div>
+                
+                <div class="sound-card" data-sound="ocean">
+                    <div class="sound-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Ocean Waves</h3>
+                    <div class="sound-controls">
+                        <button class="sound-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="volume-slider" min="0" max="100" value="50">
+                    </div>
+                </div>
+                
+                <div class="sound-card" data-sound="birds">
+                    <div class="sound-icon">
+                        <i class="fas fa-dove"></i>
+                    </div>
+                    <h3>Birds</h3>
+                    <div class="sound-controls">
+                        <button class="sound-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="volume-slider" min="0" max="100" value="50">
+                    </div>
+                </div>
+                
+                <div class="sound-card" data-sound="fire">
+                    <div class="sound-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3>Fireplace</h3>
+                    <div class="sound-controls">
+                        <button class="sound-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="volume-slider" min="0" max="100" value="50">
+                    </div>
+                </div>
+                
+                <div class="sound-card" data-sound="wind">
+                    <div class="sound-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <h3>Wind</h3>
+                    <div class="sound-controls">
+                        <button class="sound-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" class="volume-slider" min="0" max="100" value="50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-lotus"></i>
+                    <span>MindfulSpace</span>
+                </div>
+                <p>Find peace in every moment</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
